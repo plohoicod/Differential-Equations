@@ -18,7 +18,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <LineChart fx:id="errorChart" title="Local error" GridPane.rowIndex="1">
+            <LineChart fx:id="errorChart" title="Approximation error" GridPane.rowIndex="1">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -26,7 +26,7 @@
                 <NumberAxis side="LEFT" />
               </yAxis>
             </LineChart>
-            <LineChart fx:id="errorForDifferentGridStepsChart" title="Global error" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <LineChart fx:id="errorForDifferentGridStepsChart" title="Max approximation error (different number of grid steps)" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -47,12 +47,12 @@
                   <Insets />
                </opaqueInsets>
                <children>
-                  <Label text="Differential equation: y' = 1/2*sin(2*x) - y*cos(x)">
+                  <Label text="Differential equation: y' = - y - x">
                      <VBox.margin>
                         <Insets left="10.0" top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <Label text="Common solution: y = C*e^(-sin(x)) + sin(x) - 1">
+                  <Label text="Common solution: y = C*e^(-x) - x + 1">
                      <VBox.margin>
                         <Insets left="10.0" top="10.0" />
                      </VBox.margin>
@@ -120,7 +120,7 @@
                                     <Insets left="10.0" right="9.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField id="n0" fx:id="minGridStepsNumberField" prefHeight="27.0" prefWidth="77.0" />
+                              <TextField id="N" fx:id="minGridStepsNumberField" prefHeight="27.0" prefWidth="77.0" />
                            </children>
                         </HBox>
                      </children>
